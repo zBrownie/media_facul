@@ -1,4 +1,6 @@
 
+/android/key.properties
+
 # Miscellaneous
 *.class
 *.log
