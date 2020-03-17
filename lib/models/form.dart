@@ -6,26 +6,36 @@ class FormState = _FormStateBase with _$FormState;
 abstract class _FormStateBase with Store {
   
   @observable
-  int nota1;
+  String nomeMateria = '';
 
   @action
-  changeNota1(newValue)=> nota1= newValue;
+  changeNomeMateria(String newValue)=> nomeMateria= newValue;
+
 
   @observable
-  int nota2;
+  String nota1='';
 
   @action
-  changeNota2(newValue)=> nota2= newValue;
+  changeNota1(String newValue)=> nota1= newValue;
+
   @observable
-  int nota3;
+  String nota2='';
 
   @action
-  changeNota3(newValue)=> nota3= newValue;
+  changeNota2(String newValue)=> nota2= newValue;
+  @observable
+  String nota3='';
+
+  @action
+  changeNota3(String newValue)=> nota3= newValue;
   
   @observable
-  int nota4;
+  String nota4='';
 
   @action
-  changeNota4(newValue)=> nota4= newValue;
+  changeNota4(String newValue)=> nota4= newValue;
+
+  @computed
+  double get notas => ( double.parse(nota1)+double.parse(nota2) ) / 2;
 }
   
